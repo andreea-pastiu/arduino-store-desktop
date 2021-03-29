@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminPanelController">
+   <children>
+      <Label text="AdminPanel" />
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleAddArduinoBoard" text="Add Arduino Board" />
+            <Button mnemonicParsing="false" onAction="#handleAddBreadboard" text="Add Breadboard" />
+            <Button mnemonicParsing="false" onAction="#handleAddLED" text="Add LED" />
+            <Button mnemonicParsing="false" onAction="#handleAddMotor" text="Add Motor" />
+            <Button mnemonicParsing="false" onAction="#handleAddSensor" text="Add Sensor" />
+            <Button mnemonicParsing="false" onAction="#handleAddWireSet" text="Add Wire Set" />
+            <Button mnemonicParsing="false" onAction="#handleDeleteProducts" text="DeleteProducts" />
+         </children>
+      </HBox>
+      <HBox fx:id="priceBox" alignment="CENTER" prefHeight="32.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="77.0" text="Price ($)" />
+            <TextField fx:id="priceInput" prefHeight="25.0" prefWidth="103.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="companyBox" alignment="CENTER" prefHeight="28.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="77.0" text="Company" />
+            <ComboBox fx:id="companyComboBox" prefHeight="25.0" prefWidth="105.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="modelBox" alignment="CENTER" prefHeight="28.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="77.0" text="Model" />
+            <TextField fx:id="modelInput" prefHeight="25.0" prefWidth="105.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="addBox" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="600.0">
+         <children>
+            <VBox fx:id="arduinoBoardBox" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="196.0" visible="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Supply Voltage" />
+                        <TextField fx:id="boardSupplyVoltageInput" prefHeight="25.0" prefWidth="148.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Digital Pins" />
+                        <TextField fx:id="boardDigitalPinsInput" prefHeight="25.0" prefWidth="146.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Analog Pins" />
+                        <TextField fx:id="boardAnalogPinsInput" prefHeight="25.0" prefWidth="144.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Flash Memory" />
+                        <TextField fx:id="boardFlashMemoryInput" prefHeight="25.0" prefWidth="142.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Frequency" />
+                        <TextField fx:id="boardFrequencyInput" prefHeight="25.0" prefWidth="140.0" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#boardButtonAddAction" text="Add" />
+               </children>
+            </VBox>
+            <VBox fx:id="breadboardBox" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="166.0" visible="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Width" />
+                        <TextField fx:id="breadboardWidthInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Length" />
+                        <TextField fx:id="breadboardLengthInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="TiePoints" />
+                        <TextField fx:id="breadboardTiePointsInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#breadboardButtonAddAction" text="Add" />
+               </children>
+            </VBox>
+            <VBox fx:id="LEDBox" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="211.0" visible="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Color" />
+                        <TextField fx:id="LEDColorInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Diameter" />
+                        <TextField fx:id="LEDDiameterInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="LED Current" />
+                        <TextField fx:id="LEDCurrentInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#LEDButtonAddAction" text="Add" />
+               </children>
+            </VBox>
+            <VBox fx:id="motorBox" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="190.0" visible="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Voltage" />
+                        <TextField fx:id="motorVoltageInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Motor Current" />
+                        <TextField fx:id="motorCurrentInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Rotation Speed" />
+                        <TextField fx:id="motorRotationSpeedInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#motorButtonAddAction" text="Add" />
+               </children>
+            </VBox>
+            <VBox fx:id="sensorBox" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="175.0" visible="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Type" />
+                        <TextField fx:id="sensorTypeInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Voltage" />
+                        <TextField fx:id="sensorVoltageInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Digital Pin" />
+                        <TextField fx:id="sensorDigitalPinInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Analog Pin" />
+                        <TextField fx:id="sensorAnalogPinInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#sensorButtonAddAction" text="Add" />
+               </children>
+            </VBox>
+            <VBox fx:id="wireSetBox" alignment="TOP_CENTER" prefHeight="330.0" prefWidth="159.0" visible="false">
+               <children>
+                  <HBox fx:id="wiresetWiresNoInput" alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Length" />
+                        <TextField fx:id="wireSetLengthInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="41.0" prefWidth="100.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Wires No." />
+                        <TextField fx:id="wireSetWiresNoInput" prefHeight="25.0" prefWidth="128.0" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#wireSetButtonAddAction" text="Add" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <TableView fx:id="tableDelete" prefHeight="338.0" prefWidth="1085.0" />
+   </children>
+</VBox>
